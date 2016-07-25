@@ -1,5 +1,5 @@
 "use strict";
-app.controller("LoginCtrl", function($scope, AuthFactory, $location){
+app.controller("LoginCtrl", function($scope, AuthFactory,DataFactory, $location){
 
 	$scope.registerData = {
 		email: "",
