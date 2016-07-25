@@ -4,22 +4,26 @@
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" type="text/css" href="styles/main.css">
+    <link rel="stylesheet" type="text/css" href="lib/node_modules/angular-modal/modal.css">
     <link rel="stylesheet" type="text/css" href="/lib/node_modules/materialize-css/dist/css/materialize.min.css">
   </head>
   <body ng-app="app">
   	<div ng-view></div>
 
+    <script src="lib/node_modules/jquery/dist/jquery.min.js"></script>
     <script src="lib/node_modules/angular/angular.min.js"></script>
     <script src="lib/node_modules/firebase/firebase.js"></script>
-    <script src="lib/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="lib/node_modules/angular-modal/modal.js"></script>
     <script src="lib/node_modules/materialize-css/dist/js/materialize.min.js"></script>
     <script src="lib/node_modules/angular-route/angular-route.min.js"></script>
     <script src="app/app.js"></script>
     <script src="app/values/FirebaseCreds.js"></script>
+    <script src="app/controllers/modalCtrl.js"></script>
     <script src="app/factories/AuthFactory.js"></script>
     <script src="app/factories/DataFactory.js"></script>
     <script src="app/controllers/loginCtrl.js"></script>
     <script src="app/controllers/boardsCtrl.js"></script>
+    
 
 
   </body>

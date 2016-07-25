@@ -1,5 +1,5 @@
 "use strict";
-var app = angular.module('app', ['ngRoute']);
+var app = angular.module('app', ['ngRoute', 'btford.modal']);
 
 app.config(function($routeProvider, FirebaseCreds) {
 
