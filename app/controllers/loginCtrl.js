@@ -1,5 +1,5 @@
 "use strict";
-app.controller("LoginCtrl", function($scope, AuthFactory){
+app.controller("LoginCtrl", function($scope, AuthFactory, $location){
 
 	$scope.registerData = {
 		email: "",
@@ -7,16 +7,20 @@ app.controller("LoginCtrl", function($scope, AuthFactory){
 	};
 
 	$scope.registerUser = function(){
-		console.log("register");
 		$scope.signUp = true;
 	};
 
 	$scope.loginUser = function(){
-		console.log("signin");
-		AuthFactory.authWithProvider();
+		AuthFactory.authWithProvider().then(function(user) {
+			$location.url('/boards');
+			$scope.$apply();
+		});
 	};
 
 	$scope.createEmailAccount = function() {
-		AuthFactory.createAccount($scope.registerData.email, $scope.registerData.password);
+		AuthFactory.createAccount($scope.registerData.email, $scope.registerData.password).then(function(user) {
+			$location.url('/boards');
+			$scope.$apply();
+		});
 	};
 });

@@ -23,9 +23,7 @@ app.factory('AuthFactory', function() {
   };
 
   let createAccount = function(email, password) {
-    firebase.auth().createUserWithEmailAndPassword(email, password).then(function(user) {
-      console.log("New account created:", user.uid);
-    });
+    return firebase.auth().createUserWithEmailAndPassword(email, password);
   };
 
   return {authWithProvider, getUser, createAccount};

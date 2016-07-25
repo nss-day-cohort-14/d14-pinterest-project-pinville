@@ -13,9 +13,13 @@ app.config(function($routeProvider, FirebaseCreds) {
 
 // associates which controller with which view
   $routeProvider
-  .when('/pin/login', {
+  .when('/login', {
     templateUrl: "partials/login.html",
     controller: "LoginCtrl"
   })
-  .otherwise('/pin/login');
+  .when('/boards', {
+    templateUrl: "partials/boards.html",
+    controller: "BoardsCtrl"
+  })
+  .otherwise('/login');
 });
