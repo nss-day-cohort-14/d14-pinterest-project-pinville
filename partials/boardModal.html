@@ -1,4 +1,12 @@
-<div class="btf-modal" style="background:red">
-	<a class="col s4 offset-s1 waves-effect waves-light blue-grey btn-large"
+<div class="modal-wrapper">
+<div class="btf-modal card-panel">
+	<input type="text" placeholder = "Title" ng-model="title">
+	<input type="text" placeholder = "Category" ng-model="category">
+	<input type="text" placeholder = "Description" ng-model="description">
+	<div class="row">
+		<a class="col s4 offset-s1 waves-effect waves-light blue-grey btn-large"
 			ng-click="closeModal()">close Modal</a>
+		<a class="col s4 offset-s1 waves-effect waves-light blue-grey btn-large">Submit</a>
+	</div>
+</div>
 </div>
