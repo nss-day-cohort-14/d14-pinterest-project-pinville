@@ -1,6 +1,7 @@
+"use strict";
 var app = angular.module('app', ['ngRoute']);
 
-app.config(function($routeProvider, ) {
+app.config(function($routeProvider, FirebaseCreds) {
 
   let authConfig = {
     apiKey: FirebaseCreds.apiKey,
@@ -12,9 +13,9 @@ app.config(function($routeProvider, ) {
 
 // associates which controller with which view
   $routeProvider
-  .when('...', {
-    templateUrl: "...",
-    controller: "..."
+  .when('/pin/login', {
+    templateUrl: "partials/login.html",
+    controller: "LoginCtrl"
   })
-  .otherwise('...');
+  .otherwise('/pin/login');
 });
