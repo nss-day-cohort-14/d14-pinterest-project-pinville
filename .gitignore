@@ -1,3 +1,4 @@
 app/values/FirebaseCreds.js
 lib/.sublime-gulp.cache
 styles
+lib/node_modules
