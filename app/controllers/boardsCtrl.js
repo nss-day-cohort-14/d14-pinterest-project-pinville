@@ -5,8 +5,10 @@ app.controller('BoardsCtrl', function($scope, DataFactory, AuthFactory, boardMod
 	then(function(boards){
 		console.log(boards);
 	});
-		$scope.openModal = boardModal.activate;
-	
+	DataFactory.getPins('-KNYUdajW31lzK8-s62G')
+	.then(function(results) {
+		console.log(results);
+	});
+	$scope.openModal = boardModal.activate;
+
 });
-
-
