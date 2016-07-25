@@ -7,4 +7,10 @@
 			ng-click="loginUser()">Login</a>
 		</div>
 	</div>
+	<div ng-if="signUp === true">
+		<input ng-model="registerData.email" type="email" placeholder="Enter email">
+		<input ng-model="registerData.password" type="password" placeholder="Enter password">
+		<a class="col s4 offset-s4 waves-effect waves-light blue-grey btn-large"
+		ng-click="createEmailAccount()">Register!</a>
+	</div>
 </div>
