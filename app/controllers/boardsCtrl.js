@@ -15,4 +15,13 @@ app.controller('BoardsCtrl', function($scope, DataFactory, AuthFactory, boardMod
 		$location.url(boardURL);
 	}
 
+	$scope.boardsPressed = function() {
+		$location.url('/boards');
+	};
+
+	$scope.logoutPressed = function() {
+		AuthFactory.logout();
+		$location.url('/');
+	}
+
 });

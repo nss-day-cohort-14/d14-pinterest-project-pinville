@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('PinsCtrl', function($scope, $routeParams, DataFactory, pinsModal, $timeout, $location) {
+app.controller('PinsCtrl', function($scope, $routeParams, DataFactory, pinsModal, $timeout, $location, AuthFactory) {
 
   $scope.chooseAmazonPins = function() {
     let path = $routeParams.boardID + "/pins/addAmazonPin";
@@ -15,6 +15,15 @@ app.controller('PinsCtrl', function($scope, $routeParams, DataFactory, pinsModal
       })
     });
   });
+
+  $scope.boardsPressed = function() {
+    $location.url('/boards');
+  };
+
+  $scope.logoutPressed = function() {
+    AuthFactory.logout();
+    $location.url('/');
+  }
 
   $scope.openPinsModal = pinsModal.activate;
 
