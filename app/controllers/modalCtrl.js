@@ -8,7 +8,7 @@ app.factory("boardModal", function(btfModal){
 });
 
 
-app.controller("BoardModalCtrl", function($scope, boardModal, AuthFactory, DataFactory){
+app.controller("BoardModalCtrl", function($scope, boardModal, AuthFactory, DataFactory, $rootScope){
 	$scope.closeModal = boardModal.deactivate;
 
 	$scope.submitBoard = function(){
@@ -18,8 +18,16 @@ app.controller("BoardModalCtrl", function($scope, boardModal, AuthFactory, DataF
 		newBoard.description = $scope.description;
 		newBoard.uid = AuthFactory.getUser();
 
-		DataFactory.postNewBoard(newBoard);
-	};
+		DataFactory.postNewBoard(newBoard).
+		then(function(){
+			$scope.closeModal();
+			DataFactory.loadBoardsByUser(AuthFactory.getUser()).
+			then(function(userBoards){
+				$rootScope.boards=DataFactory.getBoards();
+}); 
+
+});
+};
 
 
 });

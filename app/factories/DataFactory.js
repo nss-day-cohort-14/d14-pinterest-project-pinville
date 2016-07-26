@@ -1,9 +1,8 @@
 "use strict";
 
 app.factory("DataFactory", function( FirebaseCreds, $q, $http){
-
+let boards =[]
 	let loadBoardsByUser = function (uid){
-		let boards=[];
 		return $q(function(resolve,reject){
 			console.log('user id', uid);
 			$http.get(`${FirebaseCreds.databaseURL}/boards.json?orderBy="uid"&equalTo="${uid}"`).
@@ -52,6 +51,9 @@ app.factory("DataFactory", function( FirebaseCreds, $q, $http){
 			});
 		});
 	};
+	let getBoards = function(){
+		return boards;
+	}
 
-	return {loadBoardsByUser, getPins, postNewBoard};
+	return {loadBoardsByUser, getPins, postNewBoard, getBoards};
 });
