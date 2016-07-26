@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('PinsCtrl', function($scope, $routeParams, DataFactory, pinsModal, $timeout) {
+app.controller('PinsCtrl', function($scope, $routeParams, DataFactory, pinsModal, $timeout, $route) {
   
   DataFactory.getPins($routeParams.boardID).then(function(pins) {
     $timeout(function(){
@@ -11,6 +11,12 @@ app.controller('PinsCtrl', function($scope, $routeParams, DataFactory, pinsModal
     });
   });
 
+  $scope.deletePin = function(pin){
+  	DataFactory.deletePin(pin.pinid).
+  	then(function(){
+  		$route.reload();
+  	})
+  }
   $scope.openPinsModal = pinsModal.activate;
 
 });
