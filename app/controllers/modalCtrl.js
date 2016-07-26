@@ -7,7 +7,7 @@ app.factory("boardModal", function(btfModal){
 	});
 });
 
-app.controller("BoardModalCtrl", function($scope, boardModal){
+app.controller("BoardModalCtrl", function($scope, boardModal, ItemToPin){
 	$scope.closeModal = boardModal.deactivate;
-
+	
 });
