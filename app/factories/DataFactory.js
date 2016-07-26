@@ -2,6 +2,8 @@
 
 app.factory("DataFactory", function( FirebaseCreds, $q, $http){
 	let boards =[];
+	let pins = [];
+
 	let loadBoardsByUser = function (uid){
 		return $q(function(resolve,reject){
 			console.log('user id', uid);
@@ -56,9 +58,22 @@ app.factory("DataFactory", function( FirebaseCreds, $q, $http){
 			});
 		});
 	};
+
+
+	let postNewPin = function(pinObj){
+		return $q(function(resolve,reject){
+			$http.post(`${FirebaseCreds.databaseURL}/pins.json`,
+			pinObj).success(function(){
+				resolve();
+			}).error(function(error){
+				reject(error);
+			});
+		});
+	};
+
 	let getBoards = function(){
 		return boards;
 	}
 
-	return {loadBoardsByUser, getPins, postNewBoard, getBoards};
+	return {loadBoardsByUser, getPins, postNewBoard, getBoards, postNewPin};
 });
