@@ -1,5 +1,5 @@
 "use strict";
-app.controller('BoardsCtrl', function($scope, DataFactory, AuthFactory, boardModal, $rootScope, $timeout, $location) {
+app.controller('BoardsCtrl', function($scope, DataFactory, AuthFactory, boardModal, $rootScope, $timeout, $location, $route) {
 
 	DataFactory.loadBoardsByUser(AuthFactory.getUser()).
 	then(function(userBoards){
@@ -17,11 +17,16 @@ app.controller('BoardsCtrl', function($scope, DataFactory, AuthFactory, boardMod
 
 	$scope.boardsPressed = function() {
 		$location.url('/boards');
-	};
 
 	$scope.logoutPressed = function() {
 		AuthFactory.logout();
 		$location.url('/');
+
+	$scope.deleteBoard = function(board){
+		DataFactory.deleteBoard(board.boardid).
+		then(function(){
+			$route.reload();
+		});
 	}
 
 });
