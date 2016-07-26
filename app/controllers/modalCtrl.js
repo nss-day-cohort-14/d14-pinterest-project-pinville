@@ -8,7 +8,7 @@ app.factory("boardModal", function(btfModal){
 });
 
 
-app.controller("BoardModalCtrl", function($scope, boardModal, AuthFactory, DataFactory, $rootScope){
+app.controller("BoardModalCtrl", function($location, $scope, boardModal, AuthFactory, DataFactory, $rootScope, $route){
 	$scope.closeModal = boardModal.deactivate;
 
 	$scope.submitBoard = function(){
@@ -20,13 +20,14 @@ app.controller("BoardModalCtrl", function($scope, boardModal, AuthFactory, DataF
 
 		DataFactory.postNewBoard(newBoard).
 		then(function(){
-			$scope.closeModal();
-			DataFactory.loadBoardsByUser(AuthFactory.getUser()).
-			then(function(userBoards){
-				$rootScope.boards=DataFactory.getBoards();
-}); 
-
-});
+			console.log('posting new board');
+			$scope.closeModal()
+			.then(function() {
+				console.log('modal closed');
+				$route.reload();
+			});
+		});
+		console.log(DataFactory.getBoards());
 };
 
 
