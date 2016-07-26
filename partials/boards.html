@@ -3,8 +3,8 @@
       <a href="#" class="brand-logo">Pinville</a>
       <input class ="col m6 offset-m3" type="text" placeholder ="Search for a board!" ng-model="searchBoards">
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="sass.html">Boards</a></li>
-        <li><a href="badges.html">Logout</a></li>
+        <li><a ng-click="boardsPressed()">Boards</a></li>
+        <li><a ng-click="logoutPressed()">Logout</a></li>
       </ul>
     </div>
   </nav>
