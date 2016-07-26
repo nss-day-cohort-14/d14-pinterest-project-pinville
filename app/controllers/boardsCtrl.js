@@ -1,14 +1,15 @@
 "use strict";
 app.controller('BoardsCtrl', function($scope, DataFactory, AuthFactory, boardModal, $rootScope, $timeout) {
 
+	console.log('im back');
 
 	DataFactory.loadBoardsByUser(AuthFactory.getUser()).
 	then(function(userBoards){
-	$timeout(function(){
-		$rootScope.boards=DataFactory.getBoards();
+		console.log('loadBoardsByUser', userBoards);
+		$timeout(function(){
+			$scope.boards=userBoards;
+		});
 	});
-
-	}); 
 
 
 	DataFactory.getPins('-KNYUdajW31lzK8-s62G')

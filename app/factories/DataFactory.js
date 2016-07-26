@@ -1,13 +1,14 @@
 "use strict";
 
 app.factory("DataFactory", function( FirebaseCreds, $q, $http){
-let boards =[]
+	let boards =[];
 	let loadBoardsByUser = function (uid){
 		return $q(function(resolve,reject){
 			console.log('user id', uid);
 			$http.get(`${FirebaseCreds.databaseURL}/boards.json?orderBy="uid"&equalTo="${uid}"`).
 			success(function(snapshot){
 				if(snapshot !== null){
+					boards = [];
 				Object.keys(snapshot).forEach(function(key){
 					snapshot[key].boardid=key;
 					boards.push(snapshot[key]);
@@ -44,8 +45,12 @@ let boards =[]
 		return $q(function(resolve,reject){
 			$http.post(`${FirebaseCreds.databaseURL}/boards.json`,
 			boardObj).success(function(){
-				console.log("It worked!");
-				resolve();
+				boards = [];
+				loadBoardsByUser(boardObj.uid).
+				then(function() {
+					console.log("It worked! Here are the boards: ", boards);
+					resolve();
+				});
 			}).error(function(error){
 				reject(error);
 			});
