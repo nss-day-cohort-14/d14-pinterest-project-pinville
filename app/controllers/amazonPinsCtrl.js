@@ -1,15 +1,15 @@
 "use strict";
-app.controller('AmazonPinsCtrl', function($scope, AmazonFactory, ItemToPin, pinModal) {
+app.controller('AmazonPinsCtrl', function($scope, AmazonFactory, ItemToPin, PinModal) {
 
   // Bound to input to assist amazon search
   $scope.amazonSearchTerm = "";
+  $scope.itemCollection = [];
 
   // Searches amazon and returns results in array
   $scope.searchAmazon = function() {
     AmazonFactory.getItemInfo($scope.amazonSearchTerm).then(function(itemData) {
       itemData = $.parseXML(itemData);
       let items = itemData.getElementsByTagName("Item");
-      $scope.itemCollection = [];
       for (let item in items) {
         let currentItem = items[item];
         let formattedItem = {};
@@ -23,10 +23,12 @@ app.controller('AmazonPinsCtrl', function($scope, AmazonFactory, ItemToPin, pinM
   }
 
   // Sets item to pin
-  // $scope.itemSelected = function(item) {
-  //   // ItemToPin.setItem(item);
-  //   pinModal.activate;
-  // }
-  $scope.itemSelected = pinModal.activate;
+  $scope.itemSelected = function(item) {
+    ItemToPin.setItem(item);
+    PinModal.activate;
+  }
+
+  // Opens modal
+  $scope.openPinModal = PinModal.activate;
 
 });

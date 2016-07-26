@@ -1,5 +1,5 @@
 "use strict";
-app.factory("pinModal", function(btfModal){
+app.factory("PinModal", function(btfModal){
 	return btfModal({
 		controller: "PinModalCtrl",
 		controllerAs: "modal",
@@ -7,11 +7,13 @@ app.factory("pinModal", function(btfModal){
 	});
 });
 
-app.controller("PinModalCtrl", function($scope, pinModal, ItemToPin){
+app.controller("PinModalCtrl", function($scope, PinModal, ItemToPin){
 
-  $scope.closeModal = pinModal.deactivate;
+  $scope.closeModal = PinModal.deactivate;
 
   $scope.itemToPin = ItemToPin.getItem();
+
+	console.log($scope.itemToPin);
 
 	$scope.pinToBoard = function(){
 		console.log("Pinned to board!");
