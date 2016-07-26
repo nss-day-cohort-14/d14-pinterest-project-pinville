@@ -17,10 +17,12 @@ app.controller('BoardsCtrl', function($scope, DataFactory, AuthFactory, boardMod
 
 	$scope.boardsPressed = function() {
 		$location.url('/boards');
-
+	}
+	
 	$scope.logoutPressed = function() {
 		AuthFactory.logout();
 		$location.url('/');
+	}
 
 	$scope.deleteBoard = function(board){
 		DataFactory.deleteBoard(board.boardid).
