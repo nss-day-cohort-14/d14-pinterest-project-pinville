@@ -1,0 +1,23 @@
+<div class="row">
+  <div ng-repeat="pin in pins" ng-click="enlargePicture(pin)">
+    <div class="col s4">
+      <div class="card medium">
+        <div class="card-image">
+          <img class="materialboxed" width="650" src="{{pin.image}}">
+          <span class="card-title">{{pin.title}}</span>
+        </div>
+        <div class="card-content">
+          <p>{{pin.comments}}</p>
+        </div>
+        <div class="card-action">
+          <a href="#">This is a link</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+<a class="btn-floating btn-large waves-effect waves-light red"  ng-click="openPinsModal()"><i class="material-icons b">+</i></a>
+</div>

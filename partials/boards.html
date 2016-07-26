@@ -1,6 +1,6 @@
  <div>
  <div class="row">
-<div class="all boards" ng-repeat="board in boards">
+<div class="all boards" ng-repeat="board in boards" ng-click="boardSelected(board)">
         <div class="col s4">
           <div class="card blue-grey darken-1">
             <div class="card-content white-text">
@@ -13,7 +13,7 @@
           </div>
         </div>
       </div>
-            
+
 
 </div>
 <a class="btn-floating btn-large waves-effect waves-light red"  ng-click="openModal()"><i class="material-icons b">+</i></a>

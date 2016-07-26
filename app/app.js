@@ -33,5 +33,9 @@ app.config(function($routeProvider, FirebaseCreds) {
     templateUrl: "partials/amazonpins.html",
     controller: "AmazonPinsCtrl"
   })
+  .when('/:boardID/pins', {
+    templateUrl: "partials/pinsCollection.html",
+    controller: "PinsCtrl"
+  })
   .otherwise('/login');
 });

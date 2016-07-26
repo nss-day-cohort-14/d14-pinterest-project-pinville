@@ -20,15 +20,10 @@ app.controller("BoardModalCtrl", function($location, $scope, boardModal, AuthFac
 
 		DataFactory.postNewBoard(newBoard).
 		then(function(){
-			console.log('posting new board');
 			$scope.closeModal()
 			.then(function() {
-				console.log('modal closed');
 				$route.reload();
 			});
 		});
-		console.log(DataFactory.getBoards());
-};
-
-
+	};
 });

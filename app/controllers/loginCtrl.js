@@ -12,7 +12,6 @@ app.controller("LoginCtrl", function($scope, AuthFactory,DataFactory, $location)
 
 	$scope.loginUser = function(){
 		AuthFactory.authWithProvider().then(function(user) {
-			console.log('scope.loginUser', user);
 			$location.url('/boards');
 			$scope.$apply();
 		});
