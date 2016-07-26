@@ -41,5 +41,17 @@ app.factory("DataFactory", function( FirebaseCreds, $q, $http){
 		});
 	};
 
-	return {loadBoardsByUser, getPins};
+	let postNewBoard = function(boardObj){
+		return $q(function(resolve,reject){
+			$http.post(`${FirebaseCreds.databaseURL}/boards.json`,
+			boardObj).success(function(){
+				console.log("It worked!");
+				resolve();
+			}).error(function(error){
+				reject(error);
+			});
+		});
+	};
+
+	return {loadBoardsByUser, getPins, postNewBoard};
 });

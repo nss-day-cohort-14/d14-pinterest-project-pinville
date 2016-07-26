@@ -1,4 +1,13 @@
-<div class="btf-modal" style="background:red">
-	<a class="col s4 offset-s1 waves-effect waves-light blue-grey btn-large"
-			ng-click="closeModal()">close Modal</a>
+<div class="modal-wrapper">
+<div class="btf-modal card-panel yellow lighten-2">
+	<h2>Create a new board!</h2>
+	<input type="text" placeholder = "Title" ng-model="title">
+	<input type="text" placeholder = "Category" ng-model="category">
+	<input type="text" placeholder = "Description" ng-model="description">
+	<div class="row">
+		<a class="col s4 offset-s1 waves-effect waves-light blue-grey btn-large"
+			ng-click="closeModal()">Close modal</a>
+		<a class="col s4 offset-s1 waves-effect waves-light blue-grey btn-large" ng-click="submitBoard()">Submit board</a>
+	</div>
+</div>
 </div>
