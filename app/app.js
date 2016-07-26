@@ -29,5 +29,9 @@ app.config(function($routeProvider, FirebaseCreds) {
     templateUrl: "partials/movieSearch.html",
     controller: "movieSearchCtrl"
   })
+  .when('/amazonpins', {
+    templateUrl: "partials/amazonpins.html",
+    controller: "AmazonPinsCtrl"
+  })
   .otherwise('/login');
 });

@@ -1,4 +1,5 @@
 app/values/FirebaseCreds.js
+app/values/AmazonCreds.js
 lib/.sublime-gulp.cache
 styles
 lib/node_modules
