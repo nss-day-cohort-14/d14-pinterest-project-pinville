@@ -7,6 +7,7 @@ app.factory("boardModal", function(btfModal){
 	});
 });
 
+
 app.controller("BoardModalCtrl", function($scope, boardModal, AuthFactory, DataFactory){
 	$scope.closeModal = boardModal.deactivate;
 
