@@ -7,16 +7,24 @@ app.factory("PinModal", function(btfModal){
 	});
 });
 
-app.controller("PinModalCtrl", function($scope, PinModal, ItemToPin){
+app.controller("PinModalCtrl", function($scope, PinModal, ItemToPin, $routeParams, $location, DataFactory){
 
   $scope.closeModal = PinModal.deactivate;
 
   $scope.itemToPin = ItemToPin.getItem();
 
+	$scope.itemToPin.boardid = $routeParams.boardID;
+
 	console.log($scope.itemToPin);
 
 	$scope.pinToBoard = function(){
-		console.log("Pinned to board!");
+		DataFactory.postNewPin($scope.itemToPin).then(function(user) {
+			$scope.closeModal().then(function() {
+				let path = `${$routeParams.boardID}/pins`;
+				$location.url(path);
+			});
+		});
+
 	};
 
 

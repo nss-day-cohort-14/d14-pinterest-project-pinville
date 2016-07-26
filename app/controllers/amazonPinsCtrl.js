@@ -14,8 +14,8 @@ app.controller('AmazonPinsCtrl', function($scope, AmazonFactory, ItemToPin, PinM
         let currentItem = items[item];
         let formattedItem = {};
         if (typeof currentItem === "object") {
-          formattedItem.itemPicture = currentItem.getElementsByTagName("LargeImage")[0].getElementsByTagName("URL")[0].innerHTML;
-          formattedItem.itemTitle = currentItem.getElementsByTagName("ItemAttributes")[0].getElementsByTagName('Title')[0].innerHTML;
+          formattedItem.image = currentItem.getElementsByTagName("LargeImage")[0].getElementsByTagName("URL")[0].innerHTML;
+          formattedItem.title = currentItem.getElementsByTagName("ItemAttributes")[0].getElementsByTagName('Title')[0].innerHTML;
           $scope.itemCollection.push(formattedItem);
         }
       }
@@ -26,6 +26,7 @@ app.controller('AmazonPinsCtrl', function($scope, AmazonFactory, ItemToPin, PinM
   $scope.itemSelected = function(item) {
     ItemToPin.setItem(item);
     PinModal.activate;
+    console.log("Item selected to pin:", item);
   }
 
   // Opens modal
