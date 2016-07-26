@@ -1,0 +1,9 @@
+<div>
+  <h2>Movies</h2>
+  <div id="movie--{{$index}}" class="moviesCollection" ng-repeat="($index, movie) in movies track by $index" ng-click="selectMovie()" >
+    <img ng-src="{{movie.Poster}}" alt="" width="128" />
+    <p>{{movie.Title}}</p>
+    <p>{{movie.Type}}</p>
+    <p>{{movie.Year}}</p>
+  </div>
+</div>

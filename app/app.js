@@ -21,6 +21,14 @@ app.config(function($routeProvider, FirebaseCreds) {
     templateUrl: "partials/boards.html",
     controller: "BoardsCtrl"
   })
+  .when('/movies/results', {
+    templateUrl: "partials/movies.html",
+    controller: "moviesCtrl"
+  })
+  .when('/movies/search', {
+    templateUrl: "partials/movieSearch.html",
+    controller: "movieSearchCtrl"
+  })
   .when('/amazonpins', {
     templateUrl: "partials/amazonpins.html",
     controller: "AmazonPinsCtrl"
