@@ -2,7 +2,7 @@
 
 app.factory("DataFactory", function( FirebaseCreds, $q, $http){
 	let boards =[];
-	let pins = [];
+
 
 	let loadBoardsByUser = function (uid){
 		return $q(function(resolve,reject){
@@ -70,10 +70,31 @@ app.factory("DataFactory", function( FirebaseCreds, $q, $http){
 			});
 		});
 	};
+	let deletePin = function(pinId){
+		return $q(function(resolve,reject){
+			$http.delete(`${FirebaseCreds.databaseURL}/pins/${pinId}.json`)
+			.success(function(){
+				resolve();
+			}).error(function(error){
+				reject(error);
+			});
+		});
+	};
+	
+	let deleteBoard = function(boardId){
+		return $q(function(resolve,reject){
+			$http.delete(`${FirebaseCreds.databaseURL}/boards/${boardId}.json`)
+			.success(function(){
+				resolve();
+			}).error(function(error){
+				reject(error);
+			});
+		});
+	};
 
 	let getBoards = function(){
 		return boards;
-	}
+	};
 
-	return {loadBoardsByUser, getPins, postNewBoard, getBoards, postNewPin};
+	return {loadBoardsByUser, getPins, postNewBoard, getBoards, postNewPin, deletePin, deleteBoard};
 });
