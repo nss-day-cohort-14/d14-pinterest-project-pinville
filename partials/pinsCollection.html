@@ -1,7 +1,7 @@
 <ng-include src="'partials/header.html'"></ng-include>
 
 <div class="row">
-  <div ng-repeat="pin in pins | filter: searchPins" ng-click="enlargePicture(pin)">
+  <div ng-repeat="pin in pins | filter: filter.search" ng-click="enlargePicture(pin)">
     <div class="col s4">
       <div class="card medium">
       <a class="btn-floating btn-small waves-effect waves-light transparent red" ng-click="deletePin(pin)"><i class="material-icons">X</i></a>

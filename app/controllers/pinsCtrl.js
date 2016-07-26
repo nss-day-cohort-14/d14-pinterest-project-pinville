@@ -1,6 +1,8 @@
 'use strict';
 
-app.controller('PinsCtrl', function($scope, $routeParams, DataFactory, pinsModal, $timeout, $location, $route, AuthFactory) {
+app.controller('PinsCtrl', function($scope, $routeParams, DataFactory, pinsModal, $timeout, $location, $route, AuthFactory, Filter) {
+
+  $scope.filter = Filter;
 
   $scope.chooseAmazonPins = function() {
     let path = $routeParams.boardID + "/pins/addAmazonPin";

@@ -1,5 +1,7 @@
 "use strict";
-app.controller('BoardsCtrl', function($scope, DataFactory, AuthFactory, boardModal, $rootScope, $timeout, $location, $route) {
+app.controller('BoardsCtrl', function($scope, DataFactory, AuthFactory, boardModal, $rootScope, $timeout, $location, $route, Filter) {
+
+	$scope.filter = Filter;
 
 	DataFactory.loadBoardsByUser(AuthFactory.getUser()).
 	then(function(userBoards){
