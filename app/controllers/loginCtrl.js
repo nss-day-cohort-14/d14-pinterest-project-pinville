@@ -8,6 +8,12 @@ app.controller("LoginCtrl", function($scope, AuthFactory,DataFactory, $location)
 
 	$scope.registerUser = function(){
 		$scope.signUp = true;
+		$scope.signUpBtn=true;
+	};
+	$scope.signInUser = function(){
+		$scope.signUp = true;
+		$scope.signUpBtn=false;
+
 	};
 
 	$scope.loginUser = function(){

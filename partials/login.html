@@ -3,18 +3,22 @@
 
 	<div class="card-panel splash-buttons card transparent z-depth-5">
 		<h1 class="splashText RobotoSlabFont">Welcome to Pinville!</h1>
-		<div class="row buttonPanel">
-			<a class="col s4 offset-s1 waves-effect waves-light blue-grey btn-large"
+		<div class="row buttonPanel container">
+			<a class="col s3 waves-effect waves-light blue-grey btn-large"
 			ng-click="registerUser()">Sign-up</a>
-			<a class="col s4 offset-s2 waves-effect waves-light blue-grey btn-large"
-			ng-click="loginUser()">Login</a>
+			<a class="col s3 offset-s1 waves-effect waves-light blue-grey btn-large"
+			ng-click="signInUser()">Sign-in</a>
+			<a class="col s3 offset-s1 waves-effect waves-light blue-grey btn-large"
+			ng-click="loginUser()">Login with Google</a>
 		</div>
 	</div>
-	<div ng-if="signUp === true">
-		<input ng-model="registerData.email" type="email" placeholder="Enter email">
-		<input ng-model="registerData.password" type="password" placeholder="Enter password">
-		<a class="col s4 offset-s4 waves-effect waves-light blue-grey btn-large"
+	<div ng-if="signUp === true" class="container row page-form">
+		<input ng-model="registerData.email" type="email" class="col s3 loginBox" placeholder="Enter email">
+		<input ng-model="registerData.password" type="password" class="col s3 offset-s2 loginBox" placeholder="Enter password">
+		<a ng-if="signUpBtn===true"class="col s2 offset-s1 waves-effect waves-light blue-grey btn-large"
 		ng-click="createEmailAccount()">Register!</a>
+		<a ng-if="signUpBtn!==true"class="col s2 offset-s1 waves-effect waves-light blue-grey btn-large"
+		ng-click="createEmailAccount()">Login!</a>
 	</div>
 </div>
 </div>
