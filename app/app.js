@@ -37,5 +37,12 @@ app.config(function($routeProvider, FirebaseCreds) {
     templateUrl: "partials/pinsCollection.html",
     controller: "PinsCtrl"
   })
+  .when('/:boardID/pins/addAmazonPin', {
+    templateUrl: "partials/amazonpins.html",
+    controller: "AmazonPinsCtrl"
+  })
   .otherwise('/login');
 });
+
+
+

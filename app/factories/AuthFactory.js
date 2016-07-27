@@ -26,5 +26,9 @@ app.factory('AuthFactory', function() {
     return firebase.auth().createUserWithEmailAndPassword(email, password);
   };
 
-  return {authWithProvider, getUser, createAccount};
+  let logout = function() {
+    return firebase.auth().signOut();
+  }
+
+  return {authWithProvider, getUser, createAccount, logout};
 });
