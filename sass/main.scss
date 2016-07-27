@@ -6,7 +6,7 @@
 .iris {
     background-image: url("img/dog-background.jpg");
     background-repeat: no-repeat;
-    height: 100vh;
+    height: 102vh;
     background-size: cover;
 }
 .buttonPanel{
@@ -21,4 +21,12 @@
 }
 .btn-small{
 	position:absolute;
+}
+.page-form{
+  padding-bottom:0px;
+  margin-bottom:0px;
+}
+.loginBox{
+  padding-bottom:0px;
+  margin-bottom:0px;
 }
