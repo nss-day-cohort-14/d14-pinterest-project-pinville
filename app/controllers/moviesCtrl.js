@@ -5,8 +5,7 @@ app.controller('moviesCtrl', function($scope, MoviesF) {
 
   $scope.movies = MoviesF.getMovies();
   console.log($scope.movies);
-  $scope.selectMovie = function() {
-    let movieId = (event.target.parentElement.id).split('--')[1]
-    console.log(movieId, MoviesF.getMovies()[movieId]);
+  $scope.selectMovie = function(movie) {
+    console.log(movie);
   };
 });

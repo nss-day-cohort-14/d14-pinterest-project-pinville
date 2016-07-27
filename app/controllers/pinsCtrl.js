@@ -1,7 +1,7 @@
 'use strict';
 
-app.controller('PinsCtrl', function($scope, $routeParams, DataFactory, pinsModal, $timeout) {
-  
+app.controller('PinsCtrl', function($scope, $routeParams, DataFactory, pinsModal, $timeout, MoviesF, omdbModal) {
+
   DataFactory.getPins($routeParams.boardID).then(function(pins) {
     $timeout(function(){
       $scope.pins = pins;
@@ -12,5 +12,9 @@ app.controller('PinsCtrl', function($scope, $routeParams, DataFactory, pinsModal
   });
 
   $scope.openPinsModal = pinsModal.activate;
+  $scope.openOmdbModal = function() {
+    MoviesF.setCurrentBoard($routeParams.boardID);
+    omdbModal.activate();
+  };
 
 });

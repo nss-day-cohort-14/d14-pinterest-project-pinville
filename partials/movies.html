@@ -1,9 +1,25 @@
-<div>
-  <h2>Movies</h2>
-  <div id="movie--{{$index}}" class="moviesCollection" ng-repeat="($index, movie) in movies track by $index" ng-click="selectMovie()" >
-    <img ng-src="{{movie.Poster}}" alt="" width="128" />
-    <p>{{movie.Title}}</p>
-    <p>{{movie.Type}}</p>
-    <p>{{movie.Year}}</p>
+<h1>Movies</h1>
+<div class="container">
+  <div class="row">
+    <div ng-repeat="movie in movies">
+      <div class="clearfix" ng-if="$index % 3 == 0"></div>
+      <div class="card horizontal col s3 cardOmdb">
+        <div class="card-image">
+          <img class="responsive-img" src="{{movie.Poster}}" height="100%">
+        </div>
+        <div class="card-stacked">
+          <div class="card-content">
+            <p>{{movie.Title}}</p>
+          </div>
+          <div class="card-content">
+            <p>{{movie.Year}}</p>
+          </div>
+          <div class="card-action">
+            <a class="btn-floating btn-large waves-effect waves-light red"  ng-click="selectMovie(movie)"><i class="material-icons b">+</i></a>
+            <!-- <a class="btn-floating btn-large waves-effect waves-light red"  ng-click="movieSelected(movie); openPinModal()"><i class="material-icons b">+</i></a> -->
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

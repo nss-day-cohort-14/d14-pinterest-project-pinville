@@ -9,7 +9,6 @@ app.controller('BoardsCtrl', function($scope, DataFactory, AuthFactory, boardMod
 	});
 
 	$scope.openModal = boardModal.activate;
-
 	$scope.boardSelected = function(board) {
 		let boardURL = `${board.boardid}/pins`;
 		$location.url(boardURL);
