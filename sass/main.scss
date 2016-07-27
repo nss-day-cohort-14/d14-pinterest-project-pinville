@@ -6,6 +6,17 @@ $rgba-primary-4: rgba( 39, 44,  0,1); //dark
 $titleFont: 'Fugaz One', cursive;
 $generalFont: 'Monda', sans-serif;
 
+nav {
+  height: 80px;
+}
+
+nav a {
+  margin-top: 8px;
+}
+
+#navInput {
+  margin-top: 8px;
+}
 
 .applyFont{
   font-family: $generalFont;
@@ -43,6 +54,7 @@ $generalFont: 'Monda', sans-serif;
 }
 .btn-small{
 	position:absolute;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 .page-form{
   padding-bottom:0px;
@@ -53,10 +65,29 @@ $generalFont: 'Monda', sans-serif;
   margin-bottom:0px;
 }
 
+.card-content {
+  text-align: center;
+}
+
+#navUserImageContainer {
+  float: right;
+  display: inline-block;
+  height: 80px;
+}
+
+#navUserImage {
+  border-radius: 50%;
+  width: 68px;
+  margin-top: 5px;
+  margin-right: 8px;
+  height: 86%;
+  object-fit: cover;
+}
+
 .loginBtns {
   background-color: $rgba-primary-4;
 }
 
-.btn-floating i{
-  color:black;
-}
+// .btn-floating i{
+//   color:black;
+// }

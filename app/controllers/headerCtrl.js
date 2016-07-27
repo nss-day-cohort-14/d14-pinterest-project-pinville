@@ -3,6 +3,9 @@ app.controller('HeaderCtrl', function($scope, AuthFactory, $location, $rootScope
 
   $scope.filter = Filter;
 
+  $scope.userPicture = firebase.auth().currentUser.photoURL;
+  console.log("USER PICTURE", firebase.auth().currentUser.photoURL);
+
   $scope.boardsPressed = function() {
 		$location.url('/boards');
 	}
