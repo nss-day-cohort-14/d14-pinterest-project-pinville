@@ -21,7 +21,7 @@ app.config(function($routeProvider, FirebaseCreds) {
     templateUrl: "partials/boards.html",
     controller: "BoardsCtrl"
   })
-  .when('/movies/results', {
+  .when('/:boardID/movies/results', {
     templateUrl: "partials/movies.html",
     controller: "moviesCtrl"
   })
@@ -43,6 +43,3 @@ app.config(function($routeProvider, FirebaseCreds) {
   })
   .otherwise('/login');
 });
-
-
-
