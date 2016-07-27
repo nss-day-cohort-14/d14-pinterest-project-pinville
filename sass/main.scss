@@ -6,6 +6,17 @@ $rgba-primary-4: rgba( 39, 44,  0,1); //dark
 $titleFont: 'Fugaz One', cursive;
 $generalFont: 'Monda', sans-serif;
 
+nav {
+  height: 80px;
+}
+
+nav a {
+  margin-top: 8px;
+}
+
+#navInput {
+  margin-top: 8px;
+}
 
 .applyFont{
   font-family: $generalFont;
@@ -61,12 +72,15 @@ $generalFont: 'Monda', sans-serif;
 #navUserImageContainer {
   float: right;
   display: inline-block;
+  height: 80px;
 }
 
 #navUserImage {
   border-radius: 50%;
-  width: 64%;
-  height: 100%;
+  width: 68px;
+  margin-top: 5px;
+  margin-right: 8px;
+  height: 86%;
   object-fit: cover;
 }
 
