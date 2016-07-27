@@ -1,17 +1,7 @@
-<nav>
-    <div class="nav-wrapper row">
-      <a href="#" class="brand-logo">Pinville</a>
-      <input class ="col m6 offset-m3" type="text" placeholder ="Search for a pin!" ng-model="searchPins">
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a ng-click="boardsPressed()">Boards</a></li>
-        <li><a ng-click="logoutPressed()">Logout</a></li>
-      </ul>
-    </div>
-  </nav>
-
+<ng-include src="'partials/header.html'"></ng-include>
 
 <div class="row">
-  <div ng-repeat="pin in pins | filter: searchPins" ng-click="enlargePicture(pin)">
+  <div ng-repeat="pin in pins | filter: filter.search" ng-click="enlargePicture(pin)">
     <div class="col s4">
       <div class="card medium">
       <a class="btn-floating btn-small waves-effect waves-light transparent red" ng-click="deletePin(pin)"><i class="material-icons">X</i></a>
