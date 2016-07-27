@@ -37,6 +37,7 @@ app.controller('PinsCtrl', function($scope, $routeParams, DataFactory, pinsModal
   $scope.openPinsModal = pinsModal.activate;
   $scope.openOmdbModal = function() {
     MoviesF.setCurrentBoard($routeParams.boardID);
+    console.log('just set currentboard', MoviesF.getCurrentBoard());
     omdbModal.activate();
   };
 
