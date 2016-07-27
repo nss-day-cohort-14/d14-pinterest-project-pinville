@@ -64,7 +64,9 @@ nav a {
   padding-bottom:0px;
   margin-bottom:0px;
 }
-
+.card-image > span {
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
 .card-content {
   text-align: center;
 }
