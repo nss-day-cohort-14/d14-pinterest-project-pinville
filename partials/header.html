@@ -5,6 +5,11 @@
    <ul id="nav-mobile" class="right hide-on-med-and-down">
      <li><a ng-click="boardsPressed()">Boards</a></li>
      <li><a ng-click="logoutPressed()">Logout</a></li>
+     <li ng-if="userPicture">
+       <div id="navUserImageContainer">
+        <img id="navUserImage" src="{{userPicture}}">
+       </div>
+     </li>
    </ul>
  </div>
 </nav>

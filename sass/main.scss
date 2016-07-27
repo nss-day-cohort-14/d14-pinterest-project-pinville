@@ -21,6 +21,7 @@
 }
 .btn-small{
 	position:absolute;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 .page-form{
   padding-bottom:0px;
@@ -29,4 +30,19 @@
 .loginBox{
   padding-bottom:0px;
   margin-bottom:0px;
+}
+.card-content {
+  text-align: center;
+}
+
+#navUserImageContainer {
+  float: right;
+  display: inline-block;
+}
+
+#navUserImage {
+  border-radius: 50%;
+  width: 64%;
+  height: 100%;
+  object-fit: cover;
 }
