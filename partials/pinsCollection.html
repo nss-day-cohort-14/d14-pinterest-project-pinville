@@ -4,7 +4,7 @@
   <div ng-repeat="pin in pins | filter: filter.search" ng-click="enlargePicture(pin)">
     <div class="col s4">
       <div class="card medium">
-      <a class="btn-floating btn-small waves-effect waves-light transparent red" ng-click="deletePin(pin)"><i class="material-icons">X</i></a>
+      <a class="btn-floating btn-small waves-effect waves-light transparent deleteBtn" ng-click="deletePin(pin)"><i class="deleteBtn">X</i></a>
         <div class="card-image">
           <img class="materialboxed" width="650" src="{{pin.image}}">
           <span class="card-title">{{pin.title}}</span>
