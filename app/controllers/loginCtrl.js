@@ -29,6 +29,13 @@ app.controller("LoginCtrl", function($scope, AuthFactory,DataFactory, $location)
 			$scope.$apply();
 		});
 	};
+
+	$scope.signInWithEmail = function() {
+		AuthFactory.signIn($scope.registerData.email, $scope.registerData.password).then(function(user) {
+			$location.url('/boards');
+			$scope.$apply();
+		});
+	};
 });
 
 

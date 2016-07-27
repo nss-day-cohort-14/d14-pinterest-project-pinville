@@ -25,10 +25,13 @@ app.factory('AuthFactory', function() {
   let createAccount = function(email, password) {
     return firebase.auth().createUserWithEmailAndPassword(email, password);
   };
+  let signIn = function(email, password) {
+    return firebase.auth().signInWithEmailAndPassword(email, password);
+  };
 
   let logout = function() {
     return firebase.auth().signOut();
   }
 
-  return {authWithProvider, getUser, createAccount, logout};
+  return {authWithProvider, getUser, createAccount, logout, signIn};
 });

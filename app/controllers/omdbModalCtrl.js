@@ -8,7 +8,7 @@ app.factory("omdbModal", function(btfModal) {
   });
 });
 
-app.controller("omdbModalCtrl", function($location, $scope, omdbModal, MoviesF){
+app.controller("omdbModalCtrl", function($location, $scope, omdbModal, MoviesF, $routeParams){
 	$scope.closeModal = omdbModal.deactivate;
 
 	$scope.submitMovie = function(){
@@ -16,8 +16,10 @@ app.controller("omdbModalCtrl", function($location, $scope, omdbModal, MoviesF){
     console.log('submit movie', searchTitle);
     MoviesF.searchOMDB(searchTitle)
     .then(function(movies) {
+      let path = `/${$routeParams.boardID}/movies/results`;
+      console.log('movie results path', path);
       $scope.closeModal();
-      $location.url('/movies/results');
+      $location.url(path);
     });
     //
 		// DataFactory.postNewBoard(newBoard).
