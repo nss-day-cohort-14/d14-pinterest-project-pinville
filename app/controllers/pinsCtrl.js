@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('PinsCtrl', function($scope, $routeParams, DataFactory, pinsModal, $timeout, $location, $route, AuthFactory, Filter) {
+app.controller('PinsCtrl', function($scope, $routeParams, DataFactory, pinsModal, $timeout, $location, $route, AuthFactory, Filter, MoviesF, omdbModal) {
 
   $scope.filter = Filter;
 
@@ -35,5 +35,9 @@ app.controller('PinsCtrl', function($scope, $routeParams, DataFactory, pinsModal
   }
 
   $scope.openPinsModal = pinsModal.activate;
+  $scope.openOmdbModal = function() {
+    MoviesF.setCurrentBoard($routeParams.boardID);
+    omdbModal.activate();
+  };
 
 });
