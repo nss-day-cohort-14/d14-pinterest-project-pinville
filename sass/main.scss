@@ -1,10 +1,29 @@
+$rgba-primary-0: rgba( 98,106, 33,1); //middle
+$rgba-primary-1: rgba(162,170, 93,1); //bright
+$rgba-primary-2: rgba(120,127, 58,1); //second light
+$rgba-primary-3: rgba( 68, 75, 13,1); //second dark
+$rgba-primary-4: rgba( 39, 44,  0,1); //dark
+$titleFont: 'Fugaz One', cursive;
+$generalFont: 'Monda', sans-serif;
+
+
+.applyFont{
+  font-family: $generalFont;
+}
+
+.brand-logo{
+  margin-left:1%;
+}
+.pButton{
+  margin:0 1rem;
+}
 .cardOmdb {
   min-height: 300px;
   margin-right: 1.75rem;
   margin-left: 1.75rem;
 }
 .iris {
-    background-image: url("img/dog-background.jpg");
+    background-image: url("img/kid-background.jpeg");
     background-repeat: no-repeat;
     height: 102vh;
     background-size: cover;
@@ -14,10 +33,13 @@
 }
 .splashText{
 	color:black;
-	margin-left:30%;
+	text-align:center;
+  font-size: 100px;
+  margin:0px auto;
+  font-family: $titleFont;
 }
-.RobotoSlabFont{
-	font-family: 'Roboto Slab', serif;
+.picturePanel{
+  margin-top:0px;
 }
 .btn-small{
 	position:absolute;
@@ -29,4 +51,8 @@
 .loginBox{
   padding-bottom:0px;
   margin-bottom:0px;
+}
+
+.loginBtns {
+  background-color: $rgba-primary-4;
 }
